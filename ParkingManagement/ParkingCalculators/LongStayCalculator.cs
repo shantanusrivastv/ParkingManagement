@@ -12,7 +12,6 @@ namespace ParkingManagement
     {
         private readonly IDurationCalculator<double> _durationCalculator;
         private readonly IValidator _validator;
-        private const decimal PerDayParkingFee = 7.50m;
 
         //todo DI
         public LongStayCalculator()
@@ -26,7 +25,7 @@ namespace ParkingManagement
             if (_validator.ValidateInput(parkingDateTime, exitDateTime))
             {
                 var chargeableDuration = _durationCalculator.GetChargeableDuration(parkingDateTime, exitDateTime);
-                parkingChargePerUnit = PerDayParkingFee;
+                parkingChargePerUnit = ParkingConfig.LongStayPerDayFee;
                 return base.CalculateFinalFee(chargeableDuration);
             }
             throw new ArgumentException("Invalid Argument Passed");

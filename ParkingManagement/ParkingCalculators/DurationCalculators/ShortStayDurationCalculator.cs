@@ -16,16 +16,31 @@ namespace ParkingManagement.ParkingCalculators
             throw new NotImplementedException();
         }
 
-        public double GetChargeableMinutesOnParkingDay(DateTime entryTime)
+        public double GetChargeableMinutesOnParkingDay(DateTime parkingDateTime)
         {
-            if (entryTime.IsFreeParkingHoursForParkDate())
+            if (parkingDateTime.IsFreeParkingHoursForParkDate())
             {
                 return 0d;
             }
             else
             {
                 //Since Parked before startClock,for more than a day so full day fee
-                return entryTime.TimeOfDay < ParkingConfig.StartClock ? ParkingConfig.FullDayDurationInMinutes : (ParkingConfig.EndClock - entryTime.TimeOfDay).TotalMinutes;
+                return parkingDateTime.TimeOfDay < ParkingConfig.StartClock ? ParkingConfig.FullDayDurationInMinutes : (ParkingConfig.EndClock - parkingDateTime.TimeOfDay).TotalMinutes;
+            }
+        }
+
+        public double GetChargeableMinutesOnExitDay(DateTime exitDateTime)
+        {
+            if (exitDateTime.IsFreeParkingHoursForExitDate())
+            {
+                return 0d;
+            }
+            else
+            {
+                //Since Exited after endClock for overnight parking so full day fee
+                return exitDateTime.TimeOfDay > ParkingConfig.EndClock ?
+                                    ParkingConfig.FullDayDurationInMinutes :
+                                    (exitDateTime.TimeOfDay - ParkingConfig.StartClock).TotalMinutes;
             }
         }
     }

@@ -15,7 +15,7 @@ namespace ParkingManagement.Extensions
             return dateTime.TimeOfDay > ParkingConfig.EndClock || IsWeekend(dateTime);
         }
 
-        public static bool IsFreeParkingHoursForLeaveDate(this DateTime dateTime)
+        public static bool IsFreeParkingHoursForExitDate(this DateTime dateTime)
         {
             return dateTime.TimeOfDay < ParkingConfig.StartClock || IsWeekend(dateTime);
         }

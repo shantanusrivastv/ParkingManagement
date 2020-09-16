@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ParkingManagement.ParkingCalculators.Common
+namespace ParkingManagement.Common
 {
     public class Validator : IValidator
     {

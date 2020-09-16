@@ -1,8 +1,9 @@
 ﻿using System;
-using ParkingManagement.ParkingCalculators;
-using ParkingManagement.ParkingCalculators.Common;
+using ParkingCalculator;
+using ParkingCalculator.Factory;
+using ParkingManagement.Common;
 
-namespace ParkingManagement
+namespace ParkingManagement.Core
 {
     internal static class Program
     {

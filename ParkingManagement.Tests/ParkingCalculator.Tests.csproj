@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ParkingManagement\ParkingManagement.csproj" />
+    <ProjectReference Include="..\ParkingCalculator\ParkingCalculator.csproj" />
+    <ProjectReference Include="..\ParkingManagement.Common\ParkingManagement.Common.csproj" />
   </ItemGroup>
 
 </Project>

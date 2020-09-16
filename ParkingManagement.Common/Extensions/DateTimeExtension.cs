@@ -1,11 +1,10 @@
 ﻿using System;
-using ParkingManagement.ParkingCalculators.Common;
 
-namespace ParkingManagement.Extensions
+namespace ParkingManagement.Common.Extensions
 {
     public static class DateTimeExtension
     {
-        //Todo Would Expose if required multiple places
+        // Would Expose Publicly if required multiple places
         private static bool IsWeekend(this DateTime dateTime)
         {
             return dateTime.DayOfWeek == DayOfWeek.Saturday || dateTime.DayOfWeek == DayOfWeek.Sunday;

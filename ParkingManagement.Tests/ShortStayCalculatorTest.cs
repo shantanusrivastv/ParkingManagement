@@ -1,8 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
-using ParkingManagement.ParkingCalculators;
 
-namespace ParkingManagement.Tests
+namespace ParkingCalculator.Tests
 {
     [TestFixture]
     public class ShortStayCalculatorTest

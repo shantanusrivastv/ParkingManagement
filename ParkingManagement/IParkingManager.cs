@@ -1,4 +1,4 @@
-﻿namespace ParkingManagement
+﻿namespace ParkingManagement.Core
 {
     public interface IParkingManager
     {

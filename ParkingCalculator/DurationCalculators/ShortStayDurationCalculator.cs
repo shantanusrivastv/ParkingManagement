@@ -1,8 +1,8 @@
 ﻿using System;
-using ParkingManagement.Extensions;
-using ParkingManagement.ParkingCalculators.Common;
+using ParkingManagement.Common;
+using ParkingManagement.Common.Extensions;
 
-namespace ParkingManagement.ParkingCalculators.DurationCalculators
+namespace ParkingCalculator.DurationCalculators
 {
     public class ShortStayDurationCalculator : IDurationCalculator<double>
     {

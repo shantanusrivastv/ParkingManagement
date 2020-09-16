@@ -1,20 +1,21 @@
 ﻿using System;
-using ParkingManagement.ParkingCalculators.Common;
-using ParkingManagement.ParkingCalculators.DurationCalculators;
+using ParkingCalculator.DurationCalculators;
+using ParkingManagement.Common;
 
-namespace ParkingManagement.ParkingCalculators
+namespace ParkingCalculator
 {
-    public class LongStayCalculator : BaseCalculator, IParkingCalculator
+    public class ShortStayCalculator : BaseCalculator, IParkingCalculator
     {
         private readonly IDurationCalculator<double> _durationCalculator;
         private readonly IValidator _validator;
-        public CalculatorType CalculatorType => CalculatorType.LONGSTAY;
+
+        public CalculatorType CalculatorType => CalculatorType.SHORTSTAY;
 
         // DI preferred
-        public LongStayCalculator()
+        public ShortStayCalculator()
         {
             _validator = new Validator();
-            _durationCalculator = new LongStayDurationCalculator();
+            _durationCalculator = new ShortStayDurationCalculator();
         }
 
         public decimal CalculateParkingCharges(DateTime parkingDateTime, DateTime exitDateTime)
@@ -22,7 +23,7 @@ namespace ParkingManagement.ParkingCalculators
             if (_validator.IsValidInput(parkingDateTime, exitDateTime))
             {
                 var chargeableDuration = _durationCalculator.GetChargeableDuration(parkingDateTime, exitDateTime);
-                ParkingChargePerUnit = ParkingConfig.LongStayPerDayFee;
+                ParkingChargePerUnit = ParkingConfig.ShortStayPerMinFee;
                 return base.CalculateFinalFee(chargeableDuration);
             }
             throw new ArgumentException("Parking Date cannot be greater than Exit date");

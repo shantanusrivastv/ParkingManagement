@@ -1,6 +1,7 @@
 ﻿using System;
+using ParkingManagement.Common;
 
-namespace ParkingManagement.ParkingCalculators.Common
+namespace ParkingCalculator
 {
     public class NotFoundCalculator : IParkingCalculator
     {

@@ -1,4 +1,4 @@
-﻿namespace ParkingManagement.ParkingCalculators.Common
+﻿namespace ParkingManagement.Common
 {
     public enum CalculatorType
     {

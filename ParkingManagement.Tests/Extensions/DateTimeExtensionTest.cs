@@ -1,8 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using ParkingManagement.Extensions;
+using ParkingManagement.Common.Extensions;
 
-namespace ParkingManagement.Tests.Extensions
+namespace ParkingCalculator.Tests.Extensions
 {
     [TestFixture]
     public class DateTimeExtensionTest

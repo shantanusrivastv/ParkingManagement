@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement", "ParkingManagement\ParkingManagement.csproj", "{8AF3D1FD-053F-4569-A821-E4593D12430C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Core", "ParkingManagement\ParkingManagement.Core.csproj", "{8AF3D1FD-053F-4569-A821-E4593D12430C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Tests", "ParkingManagement.Tests\ParkingManagement.Tests.csproj", "{E9B72EC6-3A5C-4182-8B85-040C276D50E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator.Tests", "ParkingManagement.Tests\ParkingCalculator.Tests.csproj", "{E9B72EC6-3A5C-4182-8B85-040C276D50E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Common", "ParkingManagement.Common\ParkingManagement.Common.csproj", "{3738D1AA-A8D6-4115-900C-B35D8F179368}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator", "ParkingCalculator\ParkingCalculator.csproj", "{6A5B9301-427D-4527-A2A0-92563F948EEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{E9B72EC6-3A5C-4182-8B85-040C276D50E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9B72EC6-3A5C-4182-8B85-040C276D50E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9B72EC6-3A5C-4182-8B85-040C276D50E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3738D1AA-A8D6-4115-900C-B35D8F179368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3738D1AA-A8D6-4115-900C-B35D8F179368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3738D1AA-A8D6-4115-900C-B35D8F179368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3738D1AA-A8D6-4115-900C-B35D8F179368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

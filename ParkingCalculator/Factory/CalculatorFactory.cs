@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ParkingManagement.ParkingCalculators;
-using ParkingManagement.ParkingCalculators.Common;
+using ParkingManagement.Common;
 
-namespace ParkingManagement
+namespace ParkingCalculator.Factory
 {
     //We could further abstract this to be used other than IParkingCalculator
     public class CalculatorFactory<T> : ICalculatorFactory<T> where T : class, IParkingCalculator

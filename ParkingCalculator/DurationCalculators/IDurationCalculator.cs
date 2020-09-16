@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ParkingManagement.ParkingCalculators.DurationCalculators
+namespace ParkingCalculator.DurationCalculators
 {
     public interface IDurationCalculator<out T>
     {

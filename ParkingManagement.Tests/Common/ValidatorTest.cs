@@ -1,8 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using ParkingManagement.ParkingCalculators.Common;
+using ParkingManagement.Common;
 
-namespace ParkingManagement.Tests.Common
+namespace ParkingCalculator.Tests.Common
 {
     [TestFixture]
     public class ValidatorTest

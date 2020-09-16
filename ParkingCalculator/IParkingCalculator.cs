@@ -1,7 +1,7 @@
 ﻿using System;
-using ParkingManagement.ParkingCalculators.Common;
+using ParkingManagement.Common;
 
-namespace ParkingManagement.ParkingCalculators
+namespace ParkingCalculator
 {
     public interface IParkingCalculator
     {

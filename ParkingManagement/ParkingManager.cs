@@ -1,7 +1,7 @@
 ﻿using System;
-using ParkingManagement.ParkingCalculators;
+using ParkingCalculator;
 
-namespace ParkingManagement
+namespace ParkingManagement.Core
 {
     //Implemented Strategy Pattern injecting the Calculator we need to use.
     public class ParkingManager : IParkingManager

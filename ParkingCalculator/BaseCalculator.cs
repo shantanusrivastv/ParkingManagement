@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ParkingManagement.ParkingCalculators
+namespace ParkingCalculator
 {
     public class BaseCalculator
     {

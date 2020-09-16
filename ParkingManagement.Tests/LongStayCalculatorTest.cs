@@ -24,5 +24,12 @@ namespace ParkingManagement.Tests
             var res = _sut.ParkingCharges(entryDate, exitDate);
             Assert.AreEqual(expected, res);
         }
+
+        [TestCase("09/07/2020 07:50:00", "09/07/2020 06:20:00")]
+        public void Should_Throw_Exception_For_InValid_Inputs(DateTime entryDateTime, DateTime exitDateTime)
+        {
+            var ex = Assert.Throws<ArgumentException>(() => _sut.ParkingCharges(entryDateTime, exitDateTime));
+            Assert.That(ex.Message, Is.EqualTo("Parking Date cannot be greater than Exit date"));
+        }
     }
 }

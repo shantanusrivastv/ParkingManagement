@@ -18,13 +18,13 @@ namespace ParkingManagement.ParkingCalculators
 
         public decimal ParkingCharges(DateTime parkingDateTime, DateTime exitDateTime)
         {
-            if (_validator.ValidateInput(parkingDateTime, exitDateTime))
+            if (_validator.IsValidInput(parkingDateTime, exitDateTime))
             {
                 var chargeableDuration = _durationCalculator.GetChargeableDuration(parkingDateTime, exitDateTime);
                 parkingChargePerUnit = ParkingConfig.LongStayPerDayFee;
                 return base.CalculateFinalFee(chargeableDuration);
             }
-            throw new ArgumentException("Invalid Argument Passed");
+            throw new ArgumentException("Parking Date cannot be greater than Exit date");
         }
     }
 }

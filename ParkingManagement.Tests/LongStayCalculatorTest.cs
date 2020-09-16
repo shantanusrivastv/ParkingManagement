@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using ParkingManagement.ParkingCalculators;
 
 namespace ParkingManagement.Tests
 {

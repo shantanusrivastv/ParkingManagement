@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ParkingManagement.ParkingCalculators.Common;
-using ParkingManagement.ParkingCalculators.DurationDurationCalculators;
+using ParkingManagement.ParkingCalculators.DurationCalculators;
 
-namespace ParkingManagement
+namespace ParkingManagement.ParkingCalculators
 {
     public class LongStayCalculator : BaseCalculator, IParkingCalculator
     {

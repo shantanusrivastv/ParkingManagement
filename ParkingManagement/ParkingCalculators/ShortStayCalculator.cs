@@ -1,16 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ParkingManagement.ParkingCalculators.Common;
+using ParkingManagement.ParkingCalculators.DurationCalculators;
 
-namespace ParkingManagement
+namespace ParkingManagement.ParkingCalculators
 {
-    public class ShortStayCalculator : IParkingCalculator
+    public class ShortStayCalculator : BaseCalculator, IParkingCalculator
     {
+        private readonly IDurationCalculator<double> _durationCalculator;
+        private readonly IValidator _validator;
+
+        //todo DI
+        public ShortStayCalculator()
+        {
+            _validator = new Validator();
+            _durationCalculator = new ShortStayDurationCalculator();
+        }
+
         public decimal ParkingCharges(DateTime parkingDateTime, DateTime exitDateTime)
         {
-            throw new NotImplementedException();
+            if (_validator.ValidateInput(parkingDateTime, exitDateTime))
+            {
+                var chargeableDuration = _durationCalculator.GetChargeableDuration(parkingDateTime, exitDateTime);
+                parkingChargePerUnit = ParkingConfig.ShortStayPerMinFee;
+                return base.CalculateFinalFee(chargeableDuration);
+            }
+            throw new ArgumentException("Invalid Argument Passed");
         }
     }
 }

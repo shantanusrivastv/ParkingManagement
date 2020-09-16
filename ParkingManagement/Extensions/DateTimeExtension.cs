@@ -5,6 +5,7 @@ namespace ParkingManagement.Extensions
 {
     public static class DateTimeExtension
     {
+        //Todo Would Expose if required multiple places
         private static bool IsWeekend(this DateTime dateTime)
         {
             return dateTime.DayOfWeek == DayOfWeek.Saturday || dateTime.DayOfWeek == DayOfWeek.Sunday;

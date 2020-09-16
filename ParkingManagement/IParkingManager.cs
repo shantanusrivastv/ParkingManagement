@@ -2,6 +2,6 @@
 {
     public interface IParkingManager
     {
-        decimal CalculateParkingFee();
+        decimal GetTotalParkingFee();
     }
 }

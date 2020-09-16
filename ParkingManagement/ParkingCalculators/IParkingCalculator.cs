@@ -5,7 +5,7 @@ namespace ParkingManagement.ParkingCalculators
 {
     public interface IParkingCalculator
     {
-        decimal ParkingCharges(DateTime parkingDateTime, DateTime exitDateTime);
+        decimal CalculateParkingCharges(DateTime parkingDateTime, DateTime exitDateTime);
 
         public CalculatorType CalculatorType { get; }
     }

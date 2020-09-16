@@ -7,14 +7,15 @@ using ParkingManagement.ParkingCalculators.Common;
 
 namespace ParkingManagement
 {
+    //We could further abstract this to be used other than IParkingCalculator
     public class CalculatorFactory<T> : ICalculatorFactory<T> where T : class, IParkingCalculator
     {
-        private static bool _hasInitialised;
+        private static bool _hasbeenCalled;
         private static IEnumerable<T> CalculatorList { get; set; }
 
-        public T CreateCalculator(CalculatorType commandType)
+        public T CreateCalculator(CalculatorType calculatorType)
         {
-            if (!_hasInitialised)
+            if (!_hasbeenCalled)
             {
                 var calculatorList = Assembly.GetExecutingAssembly().GetTypes()
                                            .Where(x => (typeof(T).IsAssignableFrom(x) &&
@@ -23,11 +24,11 @@ namespace ParkingManagement
 
                 //Creating a list for reuse
                 CalculatorList = calculatorList.Select(x => Activator.CreateInstance(x) as T).ToList();
-                _hasInitialised = true;
+                _hasbeenCalled = true;
             }
 
-            return (dynamic)CalculatorList.Where(x => x.CalculatorType == commandType).SingleOrDefault() ??
-                            CalculatorList.Where(x => x.CalculatorType == CalculatorType.NOTDEFINED);
+            return CalculatorList.SingleOrDefault(x => x.CalculatorType == calculatorType) ??
+                                CalculatorList.Where(x => x.CalculatorType == CalculatorType.NOTDEFINED) as T;
         }
     }
 }

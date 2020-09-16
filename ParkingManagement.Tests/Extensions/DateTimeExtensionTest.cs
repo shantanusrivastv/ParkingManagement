@@ -11,7 +11,7 @@ namespace ParkingManagement.Tests.Extensions
         [TestCase("09/16/2020 16:50:00", false)] //Everyday in not Sunday
         [TestCase("09/16/2020 18:50:00", true)] //Happy hours are free
         [TestCase("09/16/2020 15:50:00", false)] //Parked within Chargeable Clock
-        public void Should_Verifiy_Free_Parking_Hourse_For_Park_Date(DateTime parkDateTime, bool expected)
+        public void Should_Verify_Free_Parking_Hours_For_Park_Date(DateTime parkDateTime, bool expected)
         {
             Assert.AreEqual(expected, parkDateTime.IsFreeParkingHoursForParkDate());
         }
@@ -20,7 +20,7 @@ namespace ParkingManagement.Tests.Extensions
         [TestCase("09/16/2020 16:50:00", false)] //Everyday in not Sunday
         [TestCase("09/16/2020 06:50:00", true)] //Happy hours are free
         [TestCase("09/16/2020 15:50:00", false)] //Exited within Chargeable Clock
-        public void Should_Verifiy_Free_Parking_Hourse_For_Exit_Date(DateTime parkDateTime, bool expected)
+        public void Should_Verify_Free_Parking_Hours_For_Exit_Date(DateTime parkDateTime, bool expected)
         {
             Assert.AreEqual(expected, parkDateTime.IsFreeParkingHoursForExitDate());
         }

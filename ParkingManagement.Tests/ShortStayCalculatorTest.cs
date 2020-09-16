@@ -29,14 +29,14 @@ namespace ParkingManagement.Tests
         [TestCase("09/26/2020 18:00:00", "09/28/2020 08:01:00", 0.02)]//Weekend Parking with paid Park Date
         public void Should_Return_ShortStay_Parking_Charges(DateTime entryDate, DateTime exitDate, decimal expected)
         {
-            var res = _sut.ParkingCharges(entryDate, exitDate);
+            var res = _sut.CalculateParkingCharges(entryDate, exitDate);
             Assert.AreEqual(expected, res);
         }
 
         [TestCase("09/07/2020 07:50:00", "09/07/2020 06:20:00")]
         public void Should_Throw_Exception_For_InValid_Inputs(DateTime entryDateTime, DateTime exitDateTime)
         {
-            var ex = Assert.Throws<ArgumentException>(() => _sut.ParkingCharges(entryDateTime, exitDateTime));
+            var ex = Assert.Throws<ArgumentException>(() => _sut.CalculateParkingCharges(entryDateTime, exitDateTime));
             Assert.That(ex.Message, Is.EqualTo("Parking Date cannot be greater than Exit date"));
         }
     }

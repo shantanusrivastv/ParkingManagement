@@ -3,8 +3,8 @@ using ParkingManagement.ParkingCalculators.Common;
 
 namespace ParkingManagement
 {
-    public interface ICalculatorFactory<T> where T : class, IParkingCalculator
+    public interface ICalculatorFactory<out T> where T : class, IParkingCalculator
     {
-        T CreateCalculator(CalculatorType commandType);
+        T CreateCalculator(CalculatorType calculatorType);
     }
 }

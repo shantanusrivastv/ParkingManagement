@@ -16,7 +16,7 @@ namespace ParkingManagement.Tests.Common
         }
 
         [TestCase("09/07/2017 07:50:00 ", "09/09/2017 05:20:00 ", true)] //Original TestCase
-        public void Should_Validatate_Input(DateTime parkingDateTime, DateTime exitDateTime, bool expected)
+        public void Should_Validate_Input(DateTime parkingDateTime, DateTime exitDateTime, bool expected)
         {
             Assert.IsTrue(_sut.IsValidInput(parkingDateTime, exitDateTime));
         }

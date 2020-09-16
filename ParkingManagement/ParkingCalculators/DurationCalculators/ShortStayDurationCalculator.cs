@@ -8,17 +8,14 @@ namespace ParkingManagement.ParkingCalculators.DurationCalculators
     {
         public double GetChargeableDuration(DateTime parkingDateTime, DateTime exitDateTime)
         {
-            double totalChargeableMinutes,
-                   chargeableMinutesOnParkingDay,
-                   chargeableMinutesForFullDays,
-                   chargeableMinutesOnExitDay;
+            double totalChargeableMinutes;
 
             // Car is Parked for over a day
             if (exitDateTime.Date > parkingDateTime.Date)
             {
-                chargeableMinutesOnParkingDay = GetChargeableMinutesOnParkingDay(parkingDateTime);
-                chargeableMinutesForFullDays = GetChargeableMinutesForFullDays(parkingDateTime, exitDateTime);
-                chargeableMinutesOnExitDay = GetChargeableMinutesOnExitDay(exitDateTime);
+                var chargeableMinutesOnParkingDay = GetChargeableMinutesOnParkingDay(parkingDateTime);
+                var chargeableMinutesForFullDays = GetChargeableMinutesForFullDays(parkingDateTime, exitDateTime);
+                var chargeableMinutesOnExitDay = GetChargeableMinutesOnExitDay(exitDateTime);
 
                 totalChargeableMinutes = chargeableMinutesOnParkingDay + chargeableMinutesForFullDays
                                          + chargeableMinutesOnExitDay;
@@ -28,11 +25,11 @@ namespace ParkingManagement.ParkingCalculators.DurationCalculators
                 var chargeableEntryTime = parkingDateTime.TimeOfDay < ParkingConfig.StartClock ?
                                                 ParkingConfig.StartClock : parkingDateTime.TimeOfDay;
 
-                var cchargeableExitTime = exitDateTime.TimeOfDay > ParkingConfig.EndClock ?
+                var chargeableExitTime = exitDateTime.TimeOfDay > ParkingConfig.EndClock ?
                                                 ParkingConfig.EndClock : exitDateTime.TimeOfDay;
 
-                totalChargeableMinutes = cchargeableExitTime < chargeableEntryTime ?
-                                                   0d : (cchargeableExitTime - chargeableEntryTime).TotalMinutes;
+                totalChargeableMinutes = chargeableExitTime < chargeableEntryTime ?
+                                                   0d : (chargeableExitTime - chargeableEntryTime).TotalMinutes;
             }
 
             return totalChargeableMinutes;

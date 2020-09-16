@@ -10,19 +10,19 @@ namespace ParkingManagement.ParkingCalculators
         private readonly IValidator _validator;
         public CalculatorType CalculatorType => CalculatorType.LONGSTAY;
 
-        //todo DI
+        // DI preferred
         public LongStayCalculator()
         {
             _validator = new Validator();
             _durationCalculator = new LongStayDurationCalculator();
         }
 
-        public decimal ParkingCharges(DateTime parkingDateTime, DateTime exitDateTime)
+        public decimal CalculateParkingCharges(DateTime parkingDateTime, DateTime exitDateTime)
         {
             if (_validator.IsValidInput(parkingDateTime, exitDateTime))
             {
                 var chargeableDuration = _durationCalculator.GetChargeableDuration(parkingDateTime, exitDateTime);
-                parkingChargePerUnit = ParkingConfig.LongStayPerDayFee;
+                ParkingChargePerUnit = ParkingConfig.LongStayPerDayFee;
                 return base.CalculateFinalFee(chargeableDuration);
             }
             throw new ArgumentException("Parking Date cannot be greater than Exit date");

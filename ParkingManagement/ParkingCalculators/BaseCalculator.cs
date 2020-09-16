@@ -4,11 +4,11 @@ namespace ParkingManagement.ParkingCalculators
 {
     public class BaseCalculator
     {
-        protected decimal parkingChargePerUnit;
+        protected decimal ParkingChargePerUnit;
 
         protected virtual decimal CalculateFinalFee(double chargeableDuration)
         {
-            var totalCharge = Convert.ToDecimal(chargeableDuration) * parkingChargePerUnit;
+            var totalCharge = Convert.ToDecimal(chargeableDuration) * ParkingChargePerUnit;
             return decimal.Round(totalCharge, 2);
         }
     }

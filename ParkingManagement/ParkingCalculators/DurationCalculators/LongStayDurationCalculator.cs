@@ -13,10 +13,8 @@ namespace ParkingManagement.ParkingCalculators.DurationCalculators
                 // fee for whole day will be charged
                 return (exitDateTime.Date - parkingDateTime.Date).Days + 1d;
             }
-            else
-            {
-                return 1d;
-            }
+
+            return 1d;
         }
     }
 }

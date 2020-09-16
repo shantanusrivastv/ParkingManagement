@@ -9,6 +9,8 @@ namespace ParkingManagement.ParkingCalculators
         private readonly IDurationCalculator<double> _durationCalculator;
         private readonly IValidator _validator;
 
+        public CalculatorType CalculatorType => CalculatorType.SHORTSTAY;
+
         //todo DI
         public ShortStayCalculator()
         {

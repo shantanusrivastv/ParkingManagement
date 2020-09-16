@@ -9,8 +9,9 @@ namespace ParkingManagement.ParkingCalculators.DurationCalculators
             // Car is Parked for over a day
             if (exitDateTime.Date > parkingDateTime.Date)
             {
-                // Rounding up to whole days adding a day
-                return Math.Ceiling((exitDateTime - parkingDateTime).TotalDays + 1d);
+                // The exact Time Difference is not required if its new date
+                // fee for whole day will be charged
+                return (exitDateTime.Date - parkingDateTime.Date).Days + 1d;
             }
             else
             {

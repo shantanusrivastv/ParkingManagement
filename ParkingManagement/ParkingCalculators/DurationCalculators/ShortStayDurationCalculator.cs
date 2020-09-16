@@ -13,7 +13,34 @@ namespace ParkingManagement.ParkingCalculators
     {
         public double GetChargeableDuration(DateTime parkingDateTime, DateTime exitDateTime)
         {
-            throw new NotImplementedException();
+            double totalChargeableMinutes,
+                   chargeableMinutesOnParkingDay,
+                   chargeableMinutesForFullDays,
+                   chargeableMinutesOnExitDay;
+
+            // Car is Parked for over a day
+            if (exitDateTime.Date > parkingDateTime.Date)
+            {
+                chargeableMinutesOnParkingDay = GetChargeableMinutesOnParkingDay(parkingDateTime);
+                chargeableMinutesForFullDays = GetChargeableMinutesForFullDays(parkingDateTime, exitDateTime);
+                chargeableMinutesOnExitDay = GetChargeableMinutesOnExitDay(exitDateTime);
+
+                totalChargeableMinutes = chargeableMinutesOnParkingDay + chargeableMinutesForFullDays
+                                         + chargeableMinutesOnExitDay;
+            }
+            else
+            {
+                var chargeableEntryTime = parkingDateTime.TimeOfDay < ParkingConfig.StartClock ?
+                                                ParkingConfig.StartClock : parkingDateTime.TimeOfDay;
+
+                var cchargeableExitTime = exitDateTime.TimeOfDay > ParkingConfig.EndClock ?
+                                                ParkingConfig.EndClock : exitDateTime.TimeOfDay;
+
+                totalChargeableMinutes = cchargeableExitTime < chargeableEntryTime ?
+                                                   0d : (cchargeableExitTime - chargeableEntryTime).TotalMinutes;
+            }
+
+            return totalChargeableMinutes;
         }
 
         public double GetChargeableMinutesOnParkingDay(DateTime parkingDateTime)
@@ -42,6 +69,25 @@ namespace ParkingManagement.ParkingCalculators
                                     ParkingConfig.FullDayDurationInMinutes :
                                     (exitDateTime.TimeOfDay - ParkingConfig.StartClock).TotalMinutes;
             }
+        }
+
+        public int GetChargeableMiddleDays(DateTime from, DateTime end)
+        {
+            var totalDays = 0;
+            //Get Non-weekend days between Parked Day and Exit Day
+            for (var date = from.AddDays(1); date < end.AddDays(-1); date = date.AddDays(1))
+            {
+                if (date.DayOfWeek != DayOfWeek.Saturday && date.DayOfWeek != DayOfWeek.Sunday)
+                    totalDays++;
+            }
+
+            return totalDays;
+        }
+
+        public double GetChargeableMinutesForFullDays(DateTime entryTime, DateTime exitTime)
+        {
+            var days = GetChargeableMiddleDays(entryTime, exitTime);
+            return days * ParkingConfig.FullDayDurationInMinutes;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework;
-using ParkingManagement.ParkingCalculators;
 using ParkingManagement.ParkingCalculators.Common;
 using ParkingManagement.ParkingCalculators.DurationCalculators;
 

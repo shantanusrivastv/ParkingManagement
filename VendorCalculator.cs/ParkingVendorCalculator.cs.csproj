@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Calculator.Common\ParkingCalculator.Common.csproj" />
-    <ProjectReference Include="..\ParkingManagement.Common\ParkingManagement.Common.csproj" />
   </ItemGroup>
 
 </Project>

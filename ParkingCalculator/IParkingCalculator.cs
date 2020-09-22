@@ -1,12 +1,10 @@
 ﻿using System;
-using ParkingManagement.Common;
+using ParkingCalculator.Common;
 
 namespace ParkingCalculator
 {
-    public interface IParkingCalculator
+    public interface IParkingCalculator : ICalculator
     {
         decimal CalculateParkingCharges(DateTime parkingDateTime, DateTime exitDateTime);
-
-        public CalculatorType CalculatorType { get; }
     }
 }

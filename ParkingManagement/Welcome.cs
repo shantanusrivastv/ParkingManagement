@@ -1,6 +1,6 @@
 ﻿using System;
 using ParkingCalculator;
-using ParkingManagement.Common;
+using ParkingCalculator.Common;
 using ParkingManagement.Factory;
 
 namespace ParkingManagement.Core
@@ -16,6 +16,7 @@ namespace ParkingManagement.Core
                 var factory = new CalculatorFactory<IParkingCalculator>();
 
                 var selectedCalculator = factory.CreateCalculator(calculatorType);
+
                 return new ParkingManager(selectedCalculator).GetTotalParkingFee();
             }
             else

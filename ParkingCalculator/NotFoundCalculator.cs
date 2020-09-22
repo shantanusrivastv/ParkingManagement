@@ -1,5 +1,6 @@
 ﻿using System;
-using ParkingManagement.Common;
+
+using ParkingCalculator.Common;
 
 namespace ParkingCalculator
 {

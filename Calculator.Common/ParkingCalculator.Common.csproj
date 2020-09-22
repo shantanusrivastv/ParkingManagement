@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>ParkingCalculator.Common</AssemblyName>
+    <RootNamespace>ParkingCalculator.Common</RootNamespace>
+  </PropertyGroup>
+
+</Project>

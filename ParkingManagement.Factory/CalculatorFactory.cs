@@ -1,29 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using ParkingCalculator;
-using ParkingManagement.Common;
+using ParkingCalculator.Common;
 
 namespace ParkingManagement.Factory
 {
     //We could further abstract this to be used other than IParkingCalculator
-    public class CalculatorFactory<T> : ICalculatorFactory<T> where T : class, IParkingCalculator
+    public class CalculatorFactory<T> : ICalculatorFactory<T> where T : class, ICalculator
     {
         private static bool _hasbeenCalled;
         private static IEnumerable<T> CalculatorList { get; set; }
 
-        private const string assemblySuffix = "Calculator";
+        private const string assemblyPrefix = "ParkingCalculator";
 
         public T CreateCalculator(CalculatorType calculatorType)
         {
             if (!_hasbeenCalled)
             {
-                var assemblyToLoad = Assembly.GetExecutingAssembly().GetReferencedAssemblies()
-                                                .Where(x => x.Name.EndsWith(assemblySuffix))
-                                                .SingleOrDefault();
-
-                Assembly assembly = Assembly.Load(assemblyToLoad);
+                var assmblyList = AppDomain.CurrentDomain.GetAssemblies().ToList();
+                var assembly = assmblyList.Where(x => x.FullName.Split(",")[0] == assemblyPrefix)
+                                               .FirstOrDefault();
 
                 var calculatorList = assembly.GetTypes()
                                             .Where(x => (typeof(T).IsAssignableFrom(x) &&

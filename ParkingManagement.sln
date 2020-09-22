@@ -11,11 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Common", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator", "ParkingCalculator\ParkingCalculator.csproj", "{6A5B9301-427D-4527-A2A0-92563F948EEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Common.Tests", "ParkingManagement.Common.Tests\ParkingManagement.Common.Tests.csproj", "{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Common.Tests", "ParkingManagement.Common.Tests\ParkingManagement.Common.Tests.csproj", "{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Factory", "ParkingManagement.Factory\ParkingManagement.Factory.csproj", "{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Factory", "ParkingManagement.Factory\ParkingManagement.Factory.csproj", "{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.ConsoleClient", "ParkingManagement.ConsoleClient\ParkingManagement.ConsoleClient.csproj", "{554C8291-F258-419D-8686-3F01BEA9F71A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.ConsoleClient", "ParkingManagement.ConsoleClient\ParkingManagement.ConsoleClient.csproj", "{554C8291-F258-419D-8686-3F01BEA9F71A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator.Common", "Calculator.Common\ParkingCalculator.Common.csproj", "{2D971AB6-7192-44DE-A462-358C3329C078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingVendorCalculator.cs", "ParkingVendorCalculator.cs\ParkingVendorCalculator.cs.csproj", "{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{554C8291-F258-419D-8686-3F01BEA9F71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{554C8291-F258-419D-8686-3F01BEA9F71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{554C8291-F258-419D-8686-3F01BEA9F71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D971AB6-7192-44DE-A462-358C3329C078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D971AB6-7192-44DE-A462-358C3329C078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D971AB6-7192-44DE-A462-358C3329C078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D971AB6-7192-44DE-A462-358C3329C078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

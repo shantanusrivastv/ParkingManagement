@@ -1,6 +1,8 @@
 ﻿using System;
+using ParkingCalculator.Common;
 using ParkingCalculator.DurationCalculators;
 using ParkingManagement.Common;
+using Validator = ParkingManagement.Common.Validator;
 
 namespace ParkingCalculator
 {

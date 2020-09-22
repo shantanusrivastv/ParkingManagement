@@ -1,12 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Common\ParkingCalculator.Common.csproj" />
     <ProjectReference Include="..\ParkingCalculator\ParkingCalculator.csproj" />
-    <ProjectReference Include="..\ParkingManagement.Common\ParkingManagement.Common.csproj" />
+    <ProjectReference Include="..\ParkingVendorCalculator.cs\ParkingVendorCalculator.cs.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,10 @@
-﻿namespace ParkingManagement.Common
+﻿namespace ParkingCalculator.Common
 {
     public enum CalculatorType
     {
         SHORTSTAY,
         LONGSTAY,
+        CONTRACTOR,
         NOTDEFINED
     }
 }

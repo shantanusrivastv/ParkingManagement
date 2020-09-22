@@ -12,6 +12,7 @@ namespace ParkingManagement.Factory
         private static IEnumerable<T> CalculatorList { get; set; }
 
         private const string assemblyPrefix = "ParkingCalculator";
+        //private const string assemblyPrefix = "ParkingVendorCalculator";
 
         public T CreateCalculator(CalculatorType calculatorType)
         {

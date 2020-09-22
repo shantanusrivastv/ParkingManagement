@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.ConsoleCl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator.Common", "Calculator.Common\ParkingCalculator.Common.csproj", "{2D971AB6-7192-44DE-A462-358C3329C078}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingVendorCalculator.cs", "ParkingVendorCalculator.cs\ParkingVendorCalculator.cs.csproj", "{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingVendorCalculator", "ParkingVendorCalculator.cs\ParkingVendorCalculator.csproj", "{761BA8BB-C55D-4A7E-9820-9D4B80019B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

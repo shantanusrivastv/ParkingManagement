@@ -13,10 +13,10 @@ namespace ParkingManagement.Core
             {
                 var calculatorType = Enum.Parse<CalculatorType>(userInputCalculatorType);
                 // Preferred way DI
+                //var factory = new CalculatorFactory<ParkingVendorCalculator.ContractorCalculator>();
                 var factory = new CalculatorFactory<IParkingCalculator>();
-
                 var selectedCalculator = factory.CreateCalculator(calculatorType);
-
+                //return selectedCalculator.CalculateParkingCharges();
                 return new ParkingManager(selectedCalculator).GetTotalParkingFee();
             }
             else

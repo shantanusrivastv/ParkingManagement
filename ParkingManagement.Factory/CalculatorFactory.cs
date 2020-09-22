@@ -8,10 +8,10 @@ namespace ParkingManagement.Factory
     //We could further abstract this to be used other than IParkingCalculator
     public class CalculatorFactory<T> : ICalculatorFactory<T> where T : class, ICalculator
     {
+        private const string AssemblyName = "ParkingCalculator";
         private static bool _hasbeenCalled;
         private static IEnumerable<T> CalculatorList { get; set; }
 
-        private const string AssemblyPrefix = "ParkingCalculator";
         //private const string assemblyPrefix = "ParkingVendorCalculator";
 
         public T CreateCalculator(CalculatorType calculatorType)
@@ -20,7 +20,7 @@ namespace ParkingManagement.Factory
             {
                 var assemblyList = AppDomain.CurrentDomain.GetAssemblies().ToList();
                 var assembly = assemblyList.FirstOrDefault(
-                                    x => x.FullName != null && x.FullName.Split(",")[0] == AssemblyPrefix);
+                                    x => x.FullName != null && x.FullName.Split(",")[0] == AssemblyName);
 
                 var calculatorList = assembly.GetTypes()
                                             .Where(x => (typeof(T).IsAssignableFrom(x) &&

@@ -7,7 +7,7 @@ namespace ParkingManagement.ConsoleClient
     {
         private static void Main()
         {
-            Console.WriteLine("Welcome! to Parking Manager Console Clientt, please enter your preferred " +
+            Console.WriteLine("Welcome! to Parking Manager Console Client, please enter your preferred " +
                               "Charging options "
                               + Environment.NewLine +
                               "Currently We Support 2 Charging Options");
@@ -27,7 +27,7 @@ namespace ParkingManagement.ConsoleClient
             }
             catch (InvalidOperationException ex)
             {
-                Console.WriteLine("Invalid Selection made, reder to error below for detials");
+                Console.WriteLine("Invalid Selection made, refer to error below for details");
                 Console.WriteLine(ex.Message);
             }
         }

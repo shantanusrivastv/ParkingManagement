@@ -11,16 +11,16 @@ namespace ParkingManagement.Factory
         private static bool _hasbeenCalled;
         private static IEnumerable<T> CalculatorList { get; set; }
 
-        private const string assemblyPrefix = "ParkingCalculator";
+        private const string AssemblyPrefix = "ParkingCalculator";
         //private const string assemblyPrefix = "ParkingVendorCalculator";
 
         public T CreateCalculator(CalculatorType calculatorType)
         {
             if (!_hasbeenCalled)
             {
-                var assmblyList = AppDomain.CurrentDomain.GetAssemblies().ToList();
-                var assembly = assmblyList.Where(x => x.FullName.Split(",")[0] == assemblyPrefix)
-                                               .FirstOrDefault();
+                var assemblyList = AppDomain.CurrentDomain.GetAssemblies().ToList();
+                var assembly = assemblyList.FirstOrDefault(
+                                    x => x.FullName != null && x.FullName.Split(",")[0] == AssemblyPrefix);
 
                 var calculatorList = assembly.GetTypes()
                                             .Where(x => (typeof(T).IsAssignableFrom(x) &&

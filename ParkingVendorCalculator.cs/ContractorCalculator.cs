@@ -1,9 +1,8 @@
-﻿using System;
-using ParkingCalculator.Common;
+﻿using ParkingCalculator.Common;
 
 namespace ParkingVendorCalculator
 {
-    //Dummy Implemetation
+    //Dummy Implementation
     public class ContractorCalculator : ICalculator
     {
         //Need to define a better filter

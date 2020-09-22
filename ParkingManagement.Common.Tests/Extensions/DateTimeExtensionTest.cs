@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using ParkingManagement.Common.Extensions;
 
-namespace ParkingCalculator.Tests.Extensions
+namespace ParkingManagement.Common.Tests.Extensions
 {
     [TestFixture]
     public class DateTimeExtensionTest

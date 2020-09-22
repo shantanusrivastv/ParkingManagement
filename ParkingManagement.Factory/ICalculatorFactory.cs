@@ -1,6 +1,7 @@
-﻿using ParkingManagement.Common;
+﻿using ParkingCalculator;
+using ParkingManagement.Common;
 
-namespace ParkingCalculator.Factory
+namespace ParkingManagement.Factory
 {
     public interface ICalculatorFactory<out T> where T : class, IParkingCalculator
     {

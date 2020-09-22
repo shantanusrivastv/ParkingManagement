@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingManagement.Common", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingCalculator", "ParkingCalculator\ParkingCalculator.csproj", "{6A5B9301-427D-4527-A2A0-92563F948EEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Common.Tests", "ParkingManagement.Common.Tests\ParkingManagement.Common.Tests.csproj", "{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.Factory", "ParkingManagement.Factory\ParkingManagement.Factory.csproj", "{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingManagement.ConsoleClient", "ParkingManagement.ConsoleClient\ParkingManagement.ConsoleClient.csproj", "{554C8291-F258-419D-8686-3F01BEA9F71A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A5B9301-427D-4527-A2A0-92563F948EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B646870A-A6D8-4F2A-AF49-A4D1CD8A6B38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF0C249-3C68-43B7-80F8-F24AD14A7A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554C8291-F258-419D-8686-3F01BEA9F71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554C8291-F258-419D-8686-3F01BEA9F71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554C8291-F258-419D-8686-3F01BEA9F71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554C8291-F258-419D-8686-3F01BEA9F71A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

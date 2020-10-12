@@ -1,0 +1,16 @@
+Please find feedback on coding test
+
+You obviously spent a lot of time thinking about the problem and writing the solution, but there were a number of issues. 
+1) For example, the BaseCalculator was probably unnecessary given we should prefer composition over inheritance.
+
+2) The NotFoundCalculator calculator types was unusual and probably could have been omitted by adjusting the error handling. 
+
+3) The Validator was probably not required for such a simple validation case, but given that it was implemented it might have been better have returned the reason for the validation failure rather than needing callers to return the message (which could have been made incorrect if the implementation were to change). 
+
+4) The ParkingManager and CalculatorFactory were trying to achieve broadly the same thing and could probably have been collapsed together or simplified.
+
+5) The DateTimeExtensions seemed to contain some business logic that arguably was part of the duration calculator (as part of a “common” assembly business logic, such as when was free parking, would not be expected).
+
+6) It is not clear that the split between the “calculator” and “duration calculator” classes was necessary. 
+
+They were only small problems and each one could be argued either way. But cumulatively, they made the code quite verbose and introduced many dependencies.
